@@ -1,115 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C2E0F9"
     android:padding="24dp"
-    tools:context="AddTaskActivity">
+    tools:context=".AddTaskActivity">
 
-    <!--Judul Halaman-->
+    <!-- Judul Halaman -->
     <TextView
+        android:id="@+id/tvFormTittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvFormTittle"
         android:text="Tambah Tugas Baru"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#2C3E50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Input Mata Pelajaran-->
+    <!-- Label Mata Pelajaran -->
     <TextView
+        android:id="@+id/labelMapel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/labelMapel"
         android:text="Mata Pelajaran"
         android:textSize="14sp"
         android:textColor="#636E72"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvFormTittle"
+        app:layout_constraintTop_toBottomOf="@id/tvFormTittle"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Input Mata Pelajaran -->
     <EditText
+        android:id="@+id/editMapel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Contoh: Pemograman Berorientasi Objek"
-        android:id="@+id/editMapel"
+        android:hint="Contoh: Pemrograman Android"
         android:textSize="14sp"
-        android:inputType="text"
-        android:background="#FFFFFF"
+        android:inputType="textCapSentences"
+        android:backgroundTint="#FFFFFF"
+        android:background="@android:drawable/edit_text"
         android:padding="12dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/labelMapel"
+        app:layout_constraintTop_toBottomOf="@id/labelMapel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!--input judul tugas-->
+    <!-- Label Judul Tugas -->
     <TextView
+        android:id="@+id/labelTugas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/labelTugas"
         android:text="Judul Tugas"
         android:textSize="14sp"
         android:textColor="#636E72"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editMapel"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/editMapel"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Input Judul Tugas -->
     <EditText
+        android:id="@+id/editJudulTugas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editJudulTugas"
-        android:hint="Contoh: Membuat Aplikasi CRUD Android"
+        android:hint="Contoh: Membuat Aplikasi CRUD"
         android:textSize="14sp"
-        android:inputType="text"
+        android:inputType="textCapSentences"
+        android:background="@android:drawable/edit_text"
         android:padding="12dp"
-        android:background="#FFFFFF"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/labelTugas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- input keterampilan atau diskripsi-->
+    <!-- Label Deskripsi -->
     <TextView
+        android:id="@+id/labelDeskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/labelDeskripsi"
         android:text="Catatan atau Deskripsi"
         android:textSize="14sp"
         android:textColor="#636E72"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/editJudulTugas"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Input Deskripsi -->
     <EditText
+        android:id="@+id/editDeskripsi"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:id="@+id/editDeskripsi"
-        android:gravity="top|start"
-        android:hint="Tuliskan detail Instruksi disini"
+        android:hint="Tuliskan detail instruksi di sini"
         android:textSize="14sp"
-        android:inputType="textMultiLine"
-        android:background="#FFFFFF"
+        android:inputType="textMultiLine|textCapSentences"
+        android:gravity="top|start"
+        android:background="@android:drawable/edit_text"
         android:padding="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/labelDeskripsi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="0dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!--Tombol Simpan-->
+    <!-- Tombol Simpan -->
     <Button
+        android:id="@+id/tombolSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/tombolSave"
         android:text="Simpan Tugas"
-        android:backgroundTint="#00B894"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:backgroundTint="#00B894"
         android:padding="14dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/editDeskripsi"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
